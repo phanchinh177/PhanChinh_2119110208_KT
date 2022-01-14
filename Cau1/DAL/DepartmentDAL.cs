@@ -33,7 +33,7 @@ namespace Cau1.DAL
             SqlConnection conn = CreateConnection();
             conn.Open();
             SqlCommand cmd = new SqlCommand(
-                "select * from Department where IdDepartment=" + "'"+id.ToString() + "'", conn);
+                "select * from Department where IdDepartment=" + "'" + id.ToString() + "'", conn);
             Department Department = new Department();
             SqlDataReader reader = cmd.ExecuteReader();
             if (reader.HasRows && reader.Read())
